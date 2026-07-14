@@ -49,16 +49,16 @@ jobs:
 
             echo "🚀 Iniciando despliegue React..."
 
-            mkdir -p /var/www/react-app
+            sudo mkdir -p /var/www/react-app
 
-            rm -rf /var/www/react-app/*
+            sudo rm -rf /var/www/react-app/*
 
-            cp -r /tmp/react_build/dist/* /var/www/react-app/
+            sudo cp -r /tmp/react_build/dist/* /var/www/react-app/
 
-            chown -R www-data:www-data /var/www/react-app
+            sudo chown -R www-data:www-data /var/www/react-app
 
-            nginx -t
+            sudo nginx -t
 
-            systemctl reload nginx
+            sudo systemctl reload nginx
 
-            echo "✅ Deploy completado correctamente"
+            echo "Deploy completado correctamente"
